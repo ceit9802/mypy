@@ -119,11 +119,151 @@ def q16():
     print(s, end="")
 
 def q17():
-    lst = [i // i-3 for i in range(1,4)] 
+    lst = [i //i for i in range(0,4)] 
     print(lst)
     sum = 0 
     for n in lst: 
         sum += n 
     print(sum)
+def q18():
+    lst = [[c for c in range(r)] for r in range(3)] 
+    for x in lst: 
+        for y in x: 
+            if y < 2: 
+                print('*', end='')
+def q19():
+    lst = [2 ** x for x in range(0, 11)] 
+    print(lst[10])
+    print(lst[-1])
 
-q17()
+def q20():
+    lst1 = "12,34" 
+    lst2 = lst1.split(',') 
+    print(len(lst1) < len(lst2))
+
+def funQ21(a, b=0, c=5, d=1): 
+    return a ** b ** c
+def q21():
+    print(funQ21(b=2, a=2, c=3))    
+
+def q22():
+    x = 5 
+    f = lambda x: 1 + 2 
+    print(f(x))
+def q23():
+    from math import pi as xyz
+    #print(pi)
+    print(xyz)
+def q25():
+    from random import randint 
+    for i in range(10): 
+        #print(random(1, 5))
+        print(i,' -- ', randint(1,5))
+
+def q26():
+    x = 1 
+    def a(x):  
+        return 2 * x 
+    x = 2 + a(x) 
+    print(a(x))
+
+
+def q27():
+    a='hello'    
+    def q27x(a,b):
+        z=a[0]
+        return z
+    #print(q27x(a))
+    print(q27x(a,None))
+
+def q28():
+    s = 'SPAM' 
+    def f(x): return s + 'MAPS' 
+    print(f(s))
+
+def q30():
+    def gen(): 
+        lst = range(5) 
+        for i in lst: 
+            yield i*i 
+    for i in gen(): 
+        print(i, end="")
+
+def q34():
+    def a():
+        x = 1 
+        y = 0 
+        z = x%y 
+        print(z) 
+    def b():
+        x = 1 
+        y = 0 
+        z = x/y 
+        print(z)
+    #a()
+    b()
+def q35():
+    x = 0
+    try: 
+        print(x) 
+        print(1 / x) 
+    except ZeroDivisionError: 
+        print("ERROR MESSAGE") 
+    finally: 
+        print(x + 1) 
+    print(x + 2)
+def q36():
+    class A: 
+        def a(self): 
+            print("A", end='') 
+    class B(A): 
+        def a(self): 
+            print("B", end='') 
+    class C(B): 
+        def b(self): 
+            print("B", end='') 
+    a = A() 
+    b = B() 
+    c = C() 
+    
+    a.a() 
+    b.a() 
+    c.b()
+
+def q37():
+    try: 
+        print("Hello") 
+        raise Exception 
+        print(1/0) 
+    except Exception as e: 
+        print(e)
+def q38():
+    def q38a():
+        class CriticalError(Exception): 
+            def __init__(self, message='ERROR MESSAGE A'): 
+                Exception.__init__(self, message) 
+        raise CriticalError 
+        raise CriticalError("ERROR MESSAGE B") 
+    def q38b():
+        class CriticalError(Exception): 
+            def __init__(self, message='ERROR MESSAGE A'): 
+                Exception.__init__(self, message)
+        raise CriticalError("ERROR MESSAGE B")
+
+    #q38a()
+    q38b()
+
+def q39():
+    file = open('/home/ragingbull/work/mypy/helloPyWorld.py') 
+    # insert code here 
+    #print(file.readlines())
+    #for l in file: print(l)
+    #print(file.lines())
+    print(file.read())
+    file.close()
+
+def q40():
+    f = open("/home/ragingbull/work/mypy/helloPyWorld.py", "w") 
+    f.close()
+
+q40()
